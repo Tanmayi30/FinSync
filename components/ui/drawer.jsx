@@ -1,0 +1,113 @@
+// components/ui/drawer.jsx
+"use client";
+
+import * as React from "react";
+import { Drawer as DrawerPrimitive } from "vaul";
+
+import { cn } from "@/lib/utils";
+
+function Drawer({ ...props }) {
+  return <DrawerPrimitive.Root data-slot="drawer" {...props} />;
+}
+
+function DrawerTrigger({ children, ...props }) {
+  return (
+    <DrawerPrimitive.Trigger data-slot="drawer-trigger" asChild={false} {...props}>
+      {children}
+    </DrawerPrimitive.Trigger>
+  );
+}
+
+function DrawerPortal({ ...props }) {
+  return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />;
+}
+
+function DrawerClose({ children, ...props }) {
+  return (
+    <DrawerPrimitive.Close data-slot="drawer-close" asChild={false} {...props}>
+      {children}
+    </DrawerPrimitive.Close>
+  );
+}
+
+function DrawerOverlay({ className, ...props }) {
+  return (
+    <DrawerPrimitive.Overlay
+      data-slot="drawer-overlay"
+      className={cn("fixed inset-0 z-50 bg-black/80", className)}
+      {...props}
+    />
+  );
+}
+
+function DrawerContent({ className, children, ...props }) {
+  return (
+    <DrawerPortal data-slot="drawer-portal">
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        data-slot="drawer-content"
+        className={cn(
+          "group/drawer-content fixed z-50 flex h-auto flex-col rounded-t-[10px] border bg-background inset-x-0 bottom-0 max-h-[96vh]",
+          className
+        )}
+        {...props}
+      >
+        <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+        {children}
+      </DrawerPrimitive.Content>
+    </DrawerPortal>
+  );
+}
+
+function DrawerHeader({ className, ...props }) {
+  return (
+    <div
+      data-slot="drawer-header"
+      className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
+      {...props}
+    />
+  );
+}
+
+function DrawerFooter({ className, ...props }) {
+  return (
+    <div
+      data-slot="drawer-footer"
+      className={cn("mt-auto flex flex-col gap-2 p-4", className)}
+      {...props}
+    />
+  );
+}
+
+function DrawerTitle({ className, ...props }) {
+  return (
+    <DrawerPrimitive.Title
+      data-slot="drawer-title"
+      className={cn("text-lg font-semibold leading-none tracking-tight", className)}
+      {...props}
+    />
+  );
+}
+
+function DrawerDescription({ className, ...props }) {
+  return (
+    <DrawerPrimitive.Description
+      data-slot="drawer-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  );
+}
+
+export {
+  Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+};
