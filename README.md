@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img width="1904" height="877" alt="Transaction-graph" src="https://github.com/user-attachments/assets/4dc9095e-1823-4224-92de-e34d09d6e147" />
+
+<img width="1915" height="877" alt="Transaction-overview" src="https://github.com/user-attachments/assets/1e91cc02-8356-49a2-8f3e-74966f67aacc" />
+
+<img width="1781" height="875" alt="Add-transaction" src="https://github.com/user-attachments/assets/8f9a48ad-188e-4920-bb20-6766dc7eaf19" />
+
+
+
 
 ## Getting Started
 
