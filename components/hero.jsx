@@ -44,16 +44,16 @@ const HeroSection = () => {
                 </Button>
                 </Link>
 
-                <Link href="https://www.youtube.com/watch?v=egS6fnZAdzk&t=2668s">
+                
                 <Button size="lg" variant='outline' className="px-8"> 
                     Watch Demo 
                 </Button>
-                </Link>
+                
             </div>
             <div className='hero-image-wrapper'>
                 {/*Write scroll effect in this dev, for that create reference imageRef*/}
                 <div ref={imageRef} className='hero-image'>
-                    <Image src="/banner.jpeg" width={1280} height={720}
+                    <Image src="/banner.png" width={1280} height={720}
                     alt="Dashboard Preview"
                     className='rounded-lg shadow-2xl border mx-auto'
                     priority/>
